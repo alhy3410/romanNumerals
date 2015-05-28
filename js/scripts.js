@@ -86,3 +86,16 @@ var romanNumerals = function(number){
 //   }
 // } return allNumerals.join("")
 // };
+
+$(document).ready(function() {
+  $("form#number").submit(function(event) {
+    var numberForAnswer = $("input#numberEntered").val();
+    var result = romanNumerals(numberForAnswer);
+    $(".romanNumeral").text(result);
+
+    $("#result").show();
+
+    event.preventDefault();
+
+  });
+});
